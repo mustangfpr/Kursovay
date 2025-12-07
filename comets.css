@@ -1,0 +1,568 @@
+/* Общие стили */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at 10% 0%, #0a0f25, #000814);
+  color: #e3e8f1;
+}
+
+/* Хедер */
+/* Хедер */
+.page-header {
+  background: linear-gradient(135deg, #001229, #081b39);
+  border-bottom: 2px solid #3ba4ff;
+  box-shadow: 0 0 30px rgba(59,164,255,.4);
+  padding: 0.9rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.brand-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 35% 0%, #3ba4ff, #023e8a);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(59,164,255,0.8);
+  font-size: 1.2rem;
+}
+
+.brand-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.back-link {
+  color: #3ba4ff;
+  text-decoration: none;
+  font-size: .98rem;
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(59,164,255,.6);
+  background: rgba(1,22,39,.7);
+}
+
+.back-link:hover {
+  background: rgba(59,164,255,.1);
+}
+
+/* Основной контейнер */
+.page-main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* === Блок 1: hero-grid === */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  gap: 1.6rem;
+  padding: 1.5rem;
+  background: radial-gradient(circle at 0% 0%, rgba(59,164,255,.18), #010c1b);
+  border: 1px solid rgba(59,164,255,.45);
+  border-radius: 20px;
+  box-shadow: 0 0 35px rgba(0,0,0,.7);
+}
+
+.hero-text h1 {
+  margin: 0 0 1rem;
+  font-size: 2.1rem;
+  border-bottom: 2px solid #3ba4ff;
+  padding-bottom: .4rem;
+}
+
+.hero-text p {
+  line-height: 1.7;
+  margin-bottom: .9rem;
+}
+
+.hero-tags {
+  display: flex;
+  gap: .5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: .3rem .7rem;
+  border-radius: 999px;
+  border: 1px solid #3ba4ff;
+  background: rgba(2,20,43,.8);
+  font-size: .82rem;
+}
+
+/* блок изображения */
+.hero-image {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(59,164,255,.45);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform .3s ease, filter .3s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.1);
+}
+
+.hero-image figcaption {
+  padding: .7rem;
+  font-size: .9rem;
+  background: rgba(1,10,25,.7);
+}
+
+/* === Строение кометы (GRID 2×2) === */
+
+.structure-section {
+  margin-top: 2.5rem;
+}
+
+.structure-section h2 {
+  margin-bottom: 1.1rem;
+  font-size: 1.7rem;
+}
+
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.structure-card {
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #041326, #01101c);
+  border: 1px solid rgba(59,164,255,.45);
+  box-shadow: 0 0 26px rgba(0,0,0,.7);
+}
+
+.structure-card h3 {
+  margin-top: 0;
+}
+
+/* === Источники комет (GRID) === */
+
+.origins-section {
+  margin-top: 2.5rem;
+}
+
+.origins-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.origin {
+  padding: 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 26px rgba(0,0,0,.7);
+}
+
+.origin-oort {
+  background: linear-gradient(140deg, #011627, #003554);
+  border: 1px solid rgba(137,207,240,.5);
+}
+
+.origin-kuiper {
+  background: linear-gradient(140deg, #02172e, #054e6b);
+  border: 1px solid rgba(59,164,255,.6);
+}
+
+/* === Галерея (Grid 2x2) === */
+
+.gallery-section {
+  margin-top: 2.5rem;
+}
+
+.gallery-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 0 26px rgba(0,0,0,.7);
+  transition: transform .25s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+}
+
+/* === Миссии (Grid 3) === */
+
+.missions-section {
+  margin-top: 2.5rem;
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.mission-card {
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #05192e, #020c17);
+  border: 1px solid rgba(59,164,255,.45);
+  box-shadow: 0 0 26px rgba(0,0,0,.7);
+}
+
+.mission-card h3 {
+  margin-top: 0;
+}
+
+/* Футер */
+.page-footer {
+  text-align: center;
+  padding: 1.6rem;
+  margin-top: 3rem;
+  background: #010c1b;
+  border-top: 1px solid rgba(59,164,255,.4);
+  color: #8ea4c8;
+  font-size: .95rem;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .structure-grid,
+  .origins-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .missions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .missions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0 26px rgba(0,0,0,.7);
+  transition: transform .25s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Кнопка "Нравится" для галереи комет */
+.like-btn {
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.7);
+  background: rgba(15,23,42,.85);
+  color: #e5e7eb;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s, box-shadow .2s, transform .2s;
+}
+
+.like-btn .heart {
+  font-size: .9rem;
+}
+
+.like-btn.liked {
+  background: rgba(248,113,22,.97);
+  border-color: rgba(251,191,36,1);
+  color: #0f172a;
+  box-shadow: 0 0 20px rgba(248,113,22,.8);
+  transform: translateY(-1px);
+}
+
+/* Значок избранного и меню на странице комет */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.liked-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .3rem .65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.6);
+  background: radial-gradient(circle at 0 0, rgba(248,113,22,.3), rgba(15,23,42,.95));
+  color: #e5e7eb;
+  font-size: .8rem;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(0,0,0,.7);
+  transition: background .2s, box-shadow .2s, transform .2s, border-color .2s;
+}
+
+.liked-toggle-icon {
+  font-size: .9rem;
+}
+
+.liked-toggle-badge {
+  min-width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 999px;
+  background: rgba(248,250,252,.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  border: 1px solid rgba(148,163,184,.7);
+}
+
+.liked-toggle-badge.is-empty {
+  opacity: .6;
+}
+
+.liked-toggle:hover {
+  background: radial-gradient(circle at 0 0, rgba(251,191,36,.5), rgba(15,23,42,.95));
+  border-color: rgba(251,191,36,1);
+  box-shadow: 0 0 22px rgba(248,113,22,.9);
+  transform: translateY(-1px);
+}
+
+/* Меню понравившихся фото переиспользует общие классы из Test.css,
+   но на всякий случай немного адаптируем позиционирование */
+.liked-panel {
+  position: fixed;
+  top: 70px;
+  right: 1rem;
+  width: min(320px, 92vw);
+  z-index: 120;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.liked-panel.open {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.liked-panel-inner {
+  background: radial-gradient(circle at 0 0, rgba(30,64,175,.7), rgba(15,23,42,.98));
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,.7);
+  box-shadow: 0 22px 45px rgba(0,0,0,.9);
+  padding: .75rem .85rem .8rem;
+  backdrop-filter: blur(14px);
+}
+
+.liked-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+.liked-panel-header h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.liked-panel-close {
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.6);
+  background: transparent;
+  color: #e5e7eb;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+
+.liked-panel-close:hover {
+  background: rgba(248,113,22,.9);
+  border-color: rgba(251,191,36,1);
+  transform: translateY(-1px);
+  color: #020617;
+}
+
+.liked-panel-body {
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: .25rem;
+}
+
+.liked-panel-empty {
+  margin: .2rem 0 .3rem;
+  font-size: .85rem;
+  color: #9ca3af;
+}
+
+.liked-panel-list {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.liked-panel-item {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(148,163,184,.7);
+  background: rgba(15,23,42,.9);
+  padding: .3rem;
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  cursor: pointer;
+  transition: background .18s, border-color .18s, transform .18s, box-shadow .18s;
+}
+
+.liked-panel-item img {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.liked-panel-caption {
+  font-size: .88rem;
+  color: #e5e7eb;
+  text-align: left;
+}
+
+.liked-panel-item:hover {
+  background: rgba(30,64,175,.95);
+  border-color: rgba(251,191,36,1);
+  box-shadow: 0 0 18px rgba(59,130,246,.8);
+  transform: translateY(-1px);
+}
+
+
+
+/* Навигация в шапке (Кометы) */
+.page-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.page-nav a {
+  text-decoration: none;
+  color: #e3e8f1;
+  font-size: .98rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: .2rem;
+  transition: color .25s ease, transform .25s ease;
+}
+
+.page-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3ba4ff, #7dd3fc);
+  transition: width .25s ease;
+}
+
+.page-nav a:hover {
+  color: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.page-nav a:hover::after {
+  width: 100%;
+}
+
+.page-nav a[aria-current="page"] {
+  color: #3ba4ff;
+}
+
+.page-nav a[aria-current="page"]::after {
+  width: 100%;
+}
+
+/* Адаптив для шапки */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+  }
+  .page-nav ul {
+    flex-wrap: wrap;
+    row-gap: .35rem;
+  }
+  .page-nav a {
+    font-size: .9rem;
+  }
+}

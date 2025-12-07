@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=11491&format=png&color=000000">
+  <title>Обратная связь — Астероиды и кометы</title>
+
+  <link rel="stylesheet" href="Test.css">
+  <link rel="stylesheet" href="feedback.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a href="#feedback" class="visually-hidden-focusable" style="
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+">
+  Перейти к основному содержимому
+</a>
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo" aria-label="Логотип">
+        <img
+          src="https://img.icons8.com/?size=100&id=11491&format=png&color=60a5fa"
+          alt="Логотип: стилизованный астероид"
+          width="40"
+          height="40"
+          fetchpriority="high"
+        >
+        <h1>Астероиды и кометы<span class="star">★</span></h1>
+      </div>
+      <input type="checkbox" id="menu-toggle" aria-hidden="true">
+      <label for="menu-toggle" class="burger" aria-label="Открыть меню" role="button">
+        <span class="line" aria-hidden="true"></span>
+      </label>
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="Test.html#home">Главная</a></li>
+          <li><a href="asteroids.html">Астероиды</a></li>
+          <li><a href="comets.html">Кометы</a></li>
+          <li><a href="gallery.html">Галерея</a></li>
+          <li><a href="feedback.html" aria-current="page">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+</div>
+
+<main>
+<section id="feedback">
+    <h2>Обратная связь</h2>
+
+    <!-- Стеклянная форма с анимированными звёздочками -->
+    <form class="form form-glass" method="post" action="#">
+      <!-- декоративные звездочки -->
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+
+      <fieldset>
+        <legend>Контактные данные</legend>
+
+        <label for="name">Имя</label>
+        <input id="name" name="name" type="text" placeholder="Иван" required minlength="2" maxlength="40" pattern="^[A-Za-zА-Яа-яЁё\s\-]+$">
+
+        <label for="tel">Телефон</label>
+        <input id="tel" name="tel" type="tel" placeholder="+7 (___) ___-__-__" required pattern="^\+?\d[\d\-\s\(\)]{9,}$">
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="name@mail.ru" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Интересы</legend>
+
+        <span>Предпочтения:</span>
+        <label><input type="checkbox" name="topics" value="asteroids" checked> Астероиды</label>
+        <label><input type="checkbox" name="topics" value="comets"> Кометы</label>
+
+        <span>Любимая планета:</span>
+        <label><input type="radio" name="planet" value="mars" checked> Марс</label>
+        <label><input type="radio" name="planet" value="jupiter"> Юпитер</label>
+        <label><input type="radio" name="planet" value="saturn"> Сатурн</label>
+        <label><input type="radio" name="planet" value="earth"> Земля</label>
+
+        <label for="select">Выберите раздел(ы)</label>
+        <select id="select" name="sections" size="3" multiple required>
+          <option value="facts">Факты</option>
+          <option value="classification" selected>Классификация</option>
+          <option value="history">История открытий</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Сообщение</legend>
+
+        <label for="file">Прикрепить файл</label>
+        <input id="file" name="file" type="file" accept=".jpg,.png,.pdf">
+
+        <label for="msg">Комментарий</label>
+        <textarea id="msg" name="msg" cols="30" rows="5" placeholder="Ваш вопрос..." minlength="10" maxlength="400" required></textarea>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit">Отправить</button>
+        <input type="reset" value="Сбросить">
+      </div>
+    </form>
+  </section>
+</main>
+
+
+</main>
+
+<footer>
+  <div class="cont">
+    <div class="footer-content">
+      <div class="phone">
+        <a href="tel:+79991234567" class="social-btn" aria-label="Позвонить">
+          <img src="https://img.icons8.com/?size=100&id=ufkkYBXJSuPy&format=png&color=000000"
+               alt="Телефон" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="teleg">
+        <a href="https://web.telegram.org/a/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram">
+          <img src="https://img.icons8.com/?size=100&id=63306&format=png&color=000000"
+               alt="Telegram" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="mail">
+        <a href="mailto:fedorecpiskunovec@gmail.com" class="social-btn" aria-label="Написать на email">
+          <img src="https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000"
+               alt="Почта" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="vk">
+        <a href="https://vk.com/mustangfp" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Открыть VK">
+          <img src="https://img.icons8.com/?size=100&id=13977&format=png&color=000000"
+               alt="VK" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Астероиды и кометы. Все права защищены.</p>
+    </div>
+  </div>
+
+  <!-- Виджет уведомлений -->
+  <div class="notify-demo">
+    <div class="notify-bell" aria-label="Уведомления" tabindex="0">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="notify-panel" aria-hidden="true">
+      <ul>
+        <li>Наблюдается комета Галлея</li>
+        <li>Опасный астероид пролетит мимо Земли</li>
+        <li>Новый метеорный поток в эту ночь</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

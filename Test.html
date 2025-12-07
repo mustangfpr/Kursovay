@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=11491&format=png&color=000000">
+  <title>Астероиды и кометы</title>
+
+  <link rel="stylesheet" href="Test.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a href="#home" class="visually-hidden-focusable" style="
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+">
+  Перейти к основному содержимому
+</a>
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo" aria-label="Логотип">
+        <img
+          src="https://img.icons8.com/?size=100&id=11491&format=png&color=60a5fa"
+          alt="Логотип: стилизованный астероид"
+          width="40"
+          height="40"
+          fetchpriority="high"
+        >
+        <h1>Астероиды и кометы<span class="star">★</span></h1>
+      </div>
+      <input type="checkbox" id="menu-toggle" aria-hidden="true">
+      <label for="menu-toggle" class="burger" aria-label="Открыть меню" role="button">
+        <span class="line" aria-hidden="true"></span>
+      </label>
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="Test.html#home" aria-current="page">Главная</a></li>
+          <li><a href="asteroids.html">Астероиды</a></li>
+          <li><a href="comets.html">Кометы</a></li>
+          <li><a href="gallery.html">Галерея</a></li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+      </nav>
+      <button class="register-toggle" id="register-toggle" type="button">
+        Регистрация
+      </button>
+    </div>
+  </div>
+</header>
+</div>
+
+<!-- Модальное окно регистрации -->
+<div class="register-modal" id="register-modal" aria-hidden="true">
+  <div class="register-modal-backdrop"></div>
+  <div class="register-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="register-title">
+    <div class="register-modal-header">
+      <h2 id="register-title">Регистрация</h2>
+      <button type="button" class="register-modal-close" aria-label="Закрыть">×</button>
+    </div>
+    <form class="form form-glass register-form" id="register-form" action="#" method="post" autocomplete="off">
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true"></span>
+
+      <div class="form-row">
+        <label for="reg-name">Имя</label>
+        <input type="text" id="reg-name" name="reg-name" placeholder="Как к вам обращаться?">
+      </div>
+
+      <div class="form-row">
+        <label for="reg-email">E-mail</label>
+        <input type="email" id="reg-email" name="reg-email" placeholder="example@space.com">
+      </div>
+
+      <div class="form-row form-row-inline">
+        <div>
+          <label for="reg-pass">Пароль</label>
+          <input type="password" id="reg-pass" name="reg-pass" placeholder="******">
+        </div>
+        <div>
+          <label for="reg-pass2">Повтор пароля</label>
+          <input type="password" id="reg-pass2" name="reg-pass2" placeholder="******">
+        </div>
+      </div>
+
+      <div class="register-actions">
+        <button type="submit" class="astro-btn register-primary" id="btn-register">
+          Пройти регистрацию
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<main>
+  <!-- Главный блок с текстом и первым видео -->
+  <section id="home" class="hero">
+    <h2>Астероиды и кометы</h2>
+
+    <div class="hero-layout">
+      <div class="hero-text">
+        <p>
+          Добро пожаловать на сайт, посвященный изучению малых тел Солнечной системы —
+          астероидов и комет. Здесь вы найдете информацию об их происхождении,
+          классификации и особенностях.
+        </p>
+
+        <article>
+          <h3>Интересный факт</h3>
+          <p>
+            Астероиды и кометы считаются остатками материала, из которого
+            сформировалась наша Солнечная система около 4,6&nbsp;миллиардов лет назад.
+          </p>
+        </article>
+      </div>
+
+      <div class="hero-video">
+        <iframe
+          src="https://www.youtube.com/embed/ybo0HmdW2PU?si=jEazudA9LjVqHIsS"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="asteroids">
+    <h2>Астероиды</h2>
+    <h3>
+      <h3>
+        <a href="asteroids.html">
+          Что такое астероид? <span aria-hidden="true">↗</span>
+      </a>
+    </h3>
+
+
+    <article>
+      <h3>Цитата из книги</h3>
+      <p>Тим Грегори, из книги <cite>«Метеориты»</cite>:</p>
+      <blockquote>
+        <q>Астероиды — не фрагменты разрушенной планеты. Они всегда были отдельными телами и никогда не образовывали единого целого. Астероиды были роем одиноких странников.</q>
+      </blockquote>
+    </article>
+
+    <figure>
+      <img
+        src="https://avatars.mds.yandex.net/i?id=c2dc9c9b89d97a1cb3c5719758d402be421e2cd6-4248551-images-thumbs&n=13"
+        alt="Скопление астероидов в космосе"
+        width="500"
+        height="333"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption>Скопление астероидов</figcaption>
+    </figure>
+
+    <article>
+      <h3>Происхождение термина</h3>
+      <p>Термин <i><b>«астероид»</b></i> (от др.-греч. ἀστεροειδής — <i>«подобный звезде»</i>) был придуман композитором Чарлзом Бёрни и введён Уильямом Гершелем на основании того, что эти объекты при наблюдении в телескоп выглядели как точки, подобно звёздам.</p>
+      <p>Главный параметр, по которому проводится классификация — размер тела. Астероидами считаются тела с диаметром более 30&nbsp;метров (по другим данным — с диаметром от 10&nbsp;метров), тела меньшего размера называют метеороидами.</p>
+      <p>Считается, что планеты в поясе астероидов эволюционировали так же, как и в других областях солнечной туманности до того времени, пока Юпитер не достиг своей текущей массы, после чего вследствие орбитальных резонансов с Юпитером из пояса было выброшено более 99&nbsp;% планетезималей. ...</p>
+    </article>
+
+    <article>
+      <h3>Классификация астероидов</h3>
+      <ul>
+        <li>Класс C — углеродные, 75&nbsp;% известных астероидов;</li>
+        <li>Класс S — силикатные, 17&nbsp;% известных астероидов;</li>
+        <li>Класс M — металлические, большинство остальных.</li>
+      </ul>
+      <p>Этот список был позже расширен и число типов продолжает расти по мере детального изучения астероидов.</p>
+      <ul>
+        <li>Класс A — высокое альбедо (0,17–0,35), красноватый спектр;</li>
+        <li>Класс B — близки к C, слабое поглощение &lt; 0,5&nbsp;мкм, альбедо выше, спектр слегка голубоватый;</li>
+        <li>Класс D — очень низкое альбедо (0,02–0,05), ровный красноватый спектр без линий;</li>
+        <li>Класс E — содержит энстатит, похожи на ахондриты;</li>
+        <li>Класс F — похожи на B, но без следов «воды»;</li>
+        <li>Класс G — низкое альбедо, плоский спектр в видимом диапазоне, сильное УФ-поглощение;</li>
+        <li>Класс P — низкое альбедо (0,02–0,07), ровный красноватый спектр без линий;</li>
+        <li>Класс Q — яркие широкие полосы оливина и пироксена около 1&nbsp;мкм, признаки металла;</li>
+        <li>Класс R — относительно высокое альбедо, красноватый спектр около 0,7&nbsp;мкм;</li>
+        <li>Класс T — низкое альбедо, красноватый спектр, промежуточный наклон между P и D;</li>
+        <li>Класс V — каменистые (похожи на S), но с повышенным содержанием пироксена;</li>
+        <li>Класс J — вероятные «внутренности» Весты, очень сильные линии поглощения на 1&nbsp;мкм.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="comets">
+    <h2>Кометы</h2>
+
+    <h3>
+    <a href="comets.html">
+    Что такое комета? <span aria-hidden="true">↗</span>
+    </a>
+    </h3>
+
+    <article>
+      <h3>Цитата из книги</h3>
+      <p>Нил Стивенсон, <cite>«Одалиска»</cite>:</p>
+      <blockquote>
+        <q>Кометы — не столько астрономические объекты и даже природные явления, сколько метафора чуждого, исключительного, трансцендентного; это чудища, перуны, письмена Бога.</q>
+      </blockquote>
+    </article>
+
+    <figure>
+      <img
+        src="https://avatars.mds.yandex.net/i?id=2102f9f130d126a12fc6a10d80d302650c34df91-10907882-images-thumbs&n=13"
+        alt="Яркая комета с длинным хвостом на ночном небе"
+        width="500"
+        height="333"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption>Комета</figcaption>
+    </figure>
+
+    <article>
+      <h3>Происхождение термина</h3>
+      <p><i><b>Комета</b></i> (от др.-греч. κομήτης — «косматый») — небольшое небесное тело, обращающееся вокруг Солнца по вытянутой орбите. При сближении с Солнцем образует кому и иногда хвост из газа и пыли.</p>
+    </article>
+
+    <article>
+      <h3>Происхождение комет</h3>
+      <p>Долгопериодические кометы прилетают из облака Оорта, где находится множество кометных ядер. Далёкие тела богаты летучими веществами (вода, метан и др.), которые испаряются при подлёте к Солнцу.</p>
+      <p>Массы комет ничтожны — примерно в миллиард раз меньше массы Земли. В мае 1910 года Земля проходила сквозь хвост кометы Галлея — без заметного влияния на движение нашей планеты.</p>
+    </article>
+
+    <article>
+      <h3>Строение кометы</h3>
+      <dl>
+        <dt>Ядро</dt>
+        <dd>Твёрдая часть кометы, в которой сосредоточена почти вся её масса.</dd>
+
+        <dt>Кома</dt>
+        <dd>Светлая туманная оболочка вокруг ядра из газов и пыли.</dd>
+
+        <dt>Хвост</dt>
+        <dd>Светящаяся полоса, уносимая солнечным ветром, как правило, от Солнца.</dd>
+      </dl>
+    </article>
+  </section>
+
+  <aside aria-label="Дополнительная информация">
+    <h3>Дополнительная информация</h3>
+    <dl>
+      <dt>Метеороид</dt>
+      <dd>Небольшой твёрдый объект Солнечной системы размером от 100&nbsp;мкм до 10&nbsp;м, движущийся по орбите вокруг Солнца.</dd>
+
+      <dt>Метеор</dt>
+      <dd>Световое явление при сгорании метеороида в атмосфере Земли.</dd>
+
+      <dt>Метеорит</dt>
+      <dd>Фрагмент метеороида или астероида, достигший поверхности Земли.</dd>
+    </dl>
+  </aside>
+
+  
+
+
+</main>
+
+<footer>
+  <div class="cont">
+    <div class="footer-content">
+      <div class="phone">
+        <a href="tel:+79991234567" class="social-btn" aria-label="Позвонить">
+          <img src="https://img.icons8.com/?size=100&id=ufkkYBXJSuPy&format=png&color=000000"
+               alt="Телефон" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="teleg">
+        <a href="https://web.telegram.org/a/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram">
+          <img src="https://img.icons8.com/?size=100&id=63306&format=png&color=000000"
+               alt="Telegram" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="mail">
+        <a href="mailto:fedorecpiskunovec@gmail.com" class="social-btn" aria-label="Написать на email">
+          <img src="https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000"
+               alt="Почта" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="vk">
+        <a href="https://vk.com/mustangfp" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Открыть VK">
+          <img src="https://img.icons8.com/?size=100&id=13977&format=png&color=000000"
+               alt="VK" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Астероиды и кометы. Все права защищены.</p>
+    </div>
+  </div>
+
+  <!-- Виджет уведомлений -->
+  <div class="notify-demo">
+    <div class="notify-bell" aria-label="Уведомления" tabindex="0">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="notify-panel" aria-hidden="true">
+      <ul>
+        <li>Наблюдается комета Галлея</li>
+        <li>Опасный астероид пролетит мимо Земли</li>
+        <li>Новый метеорный поток в эту ночь</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

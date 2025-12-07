@@ -1,0 +1,96 @@
+
+/* Стили только для страницы обратной связи */
+
+.form-glass {
+  position: relative;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 24px 22px;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+/* Общий вид fieldset внутри формы */
+.form-glass fieldset {
+  margin: 0 0 18px;
+  padding: 18px 16px 20px;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+/* Блоковые подписи и элементы ввода */
+.form-glass label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-glass input[type="text"],
+.form-glass input[type="tel"],
+.form-glass input[type="email"],
+.form-glass input[type="file"],
+.form-glass select,
+.form-glass textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Чекбоксы и радиокнопки в строку с текстом */
+.form-glass input[type="checkbox"],
+.form-glass input[type="radio"] {
+  width: auto;
+  margin-right: 6px;
+}
+
+/* Кнопки снизу формы */
+.form-glass .form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.form-glass .form-actions button,
+.form-glass .form-actions input[type="reset"] {
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+/* --- Мобильная адаптация, чтобы поля точно не выходили за границы --- */
+@media (max-width: 600px) {
+
+  .form-glass {
+    width: 100%;
+    margin: 24px auto;
+    padding: 16px 14px;
+  }
+
+  .form-glass fieldset {
+    padding: 14px 10px 16px;
+  }
+
+  .form-glass input[type="text"],
+  .form-glass input[type="tel"],
+  .form-glass input[type="email"],
+  .form-glass input[type="file"],
+  .form-glass select,
+  .form-glass textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 9px 10px;
+  }
+
+  .form-glass .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-glass .form-actions button,
+  .form-glass .form-actions input[type="reset"] {
+    width: 100%;
+    text-align: center;
+  }
+}

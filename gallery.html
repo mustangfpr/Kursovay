@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=11491&format=png&color=000000">
+  <title>Галерея — Астероиды и кометы</title>
+
+  <link rel="stylesheet" href="Test.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a href="#gallery-main" class="visually-hidden-focusable" style="
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+">
+  Перейти к основному содержимому
+</a>
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo" aria-label="Логотип">
+        <img
+          src="https://img.icons8.com/?size=100&id=11491&format=png&color=60a5fa"
+          alt="Логотип: стилизованный астероид"
+          width="40"
+          height="40"
+          fetchpriority="high"
+        >
+        <h1>Астероиды и кометы<span class="star">★</span></h1>
+      </div>
+      <input type="checkbox" id="menu-toggle" aria-hidden="true">
+      <label for="menu-toggle" class="burger" aria-label="Открыть меню" role="button">
+        <span class="line" aria-hidden="true"></span>
+      </label>
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="Test.html#home">Главная</a></li>
+          <li><a href="asteroids.html">Астероиды</a></li>
+          <li><a href="comets.html">Кометы</a></li>
+          <li><a href="gallery.html" aria-current="page">Галерея</a></li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+      </nav>
+      <button class="liked-toggle" id="liked-toggle" type="button" aria-label="Понравившиеся фото">
+        <span class="liked-toggle-icon">♥</span>
+        <span class="liked-toggle-text">Избранное</span>
+        <span class="liked-toggle-badge is-empty" id="liked-count-badge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="liked-panel" aria-hidden="true">
+  <div class="liked-panel-inner">
+    <div class="liked-panel-header">
+      <h3>Понравившиеся фото</h3>
+      <button type="button" class="liked-panel-close" aria-label="Закрыть">×</button>
+    </div>
+    <div class="liked-panel-body">
+      <p class="liked-panel-empty">Вы ещё ничего не отметили.</p>
+      <div class="liked-panel-list"></div>
+    </div>
+  </div>
+</div>
+
+<main id="gallery-main">
+  <section id="gallery">
+    <h2>Галерея</h2>
+    <p>
+      Здесь собраны красивые изображения туманностей, комет, метеорных потоков и орбит астероидов.
+      Отмечайте понравившиеся сердечком — они появятся в «Избранном» вверху сайта,
+      а также в блоке ниже.
+    </p>
+
+    <!-- Кнопки с превью (с дополнительными изображениями) -->
+    <div class="buttons-demo">
+      <div class="btn-with-img">
+        <button class="astro-btn orbit-btn">Орбита астероидов</button>
+        <img
+          src="https://avatars.mds.yandex.net/i?id=aeb83171ab9e90dc01b90376fadcc93f_l-4218911-images-thumbs&n=13"
+          alt="Орбита астероидов"
+          class="btn-preview-img"
+        >
+      </div>
+
+      <div class="btn-with-img">
+        <button class="astro-btn comet-btn">Хвост кометы</button>
+        <img
+          src="https://img.freepik.com/premium-photo/comet-nucleus-tail-black-background-shooting-star-space-stardust-with-nebula_533381-374.jpg?semt=ais_hybrid&w=740"
+          alt="Хвост кометы"
+          class="btn-preview-img"
+        >
+      </div>
+
+      <div class="btn-with-img">
+        <button class="astro-btn impact-btn">Метеоритный дождь</button>
+        <img
+          src="https://yandex-images.clstorage.net/56aHh0v86/9c6207ln1L/_yWsbx_6CsA7ThPpVxSiG2V7gE-Bxf9J4IuNI20j66LApfo8rYYOL_J4lZDMI6Fr8vIisl-9TxS4_ZVUH4ExHe9zvSNcvxefaA4IpBsTqx96MJ0HgYLjG-ucliMzY-ipzvH4UcP_KV7IVvXss1vYdPWtc-RF9Q1UhcOAETHRM1LwMZ1bBd58yRJQdudAF4IOWj26TIG98z_hodQrLFaklKe2mX3EzhJ19FTtx7pQ3UbwgnT1VpAlY6n_5x4h3QhL8AGwXgzdctovf0rxUDiQEHcCp0Oag9k18I3kDjFwlrKlkKJM8_A9RN5b5Na5VcN045Ni6ni_MkK11sQCGswdfMINnW0C_EvdGUl88nUVlw1SLJp-vp7aD_-ryjAtWICesoS8WN7HDHDnS-rtnFPBf-6JYsNRqTNPivfBHRL2KGbsIJ12BsNh4zludcB6Mo8RTTu8XIaNxDXzrt0tD16wsZWTgGf7-BxwwWzT7ad4z2rTp2D2Z5weRrnMwiE97j182h6Bbxfga9w8UXDFQgq-LncggmKhjuwU6Jb9JzRiibK4gZ996swnTtJzzMayXN1d0LpP6FGIPHi48uItC-E9Qs8Mr0Uv-mHoHnRr90IZqR1pHq1krYnaM-Oi_yMQcZGVh4GpQtnvInrCSdLjtkDbR_WxYOVrkgZuksX2Ph3NK1DAAblpAv5q2xNUUsdaGak0dTyFYKGS0g_Em-Q1D0OcgoGmiVnVzQty9W_d8bZI4FfCu1PHe5kHQ4Dryykw8R1dygGxbTXia_clbFLFZTWeFHkfp1-0r84MyqTZCD9qvoKnrJta6_U4Vvxa5c-Ddf9k0bVn72mTCU2J6NkMMfY_be0MjFcm_VXqLXZq-WA1hDN7LKtJspvFHduI0QcHcbSxiZGKYMnvDFDDSsDUg3_XQ9Kxfu5EnjVUrszpPjPUE03qAZRYGM1J1y5OScdAAIIEfwyfXp-mwCTtpMoYB2Y"
+          alt="Метеоритный дождь"
+          class="btn-preview-img"
+        >
+      </div>
+
+      <div class="btn-with-img">
+        <button class="astro-btn starfall-btn">Звёздный дождь</button>
+        <img
+          src="https://yandex-images.clstorage.net/56aHh0v86/9c6207ln1L/_yWsbx_6CsA7ThPpVxSiG2V7gE-Bxf9J4IuNdmcq4PbEpv1r-toJeKQgxcCSc6Fp8acktwS6ShG_qpk4FZRkEr536j9dpE3APlpY4xsOrgtwN50MlIfmTefSgXEBTJKGsZ-EXNX5IVLueMnBkWq4f-GcSKFLkxdAouXVIizRBXLtCbVFGv9J6S96VcRQDpEbVD2gTpyY0wHau8YQLUujvZqjhkT-8CpX3H3mxoB53VfWsHTGRIMbe7vl5Q8p2AZ8_jSaeQzvZvsxV2rZXxWvMV4sjH65hfUz_LngKxx8nZKriYlN7_MvSe5u99CfV_JA96xd5Vi4Cm6M1-kiGtYnRfkCrE8Pykv8LHJE5GIxsjJkI6pQh5ndJdCu9DUIUaqjn7CZQ9TWKUvlY-3Qtn7kQfqTfOBHsDBblvnEIgHSGG_HIotGPcVs5DBtU8JACaEsXi-vR5q72xX_ieMJN3SVs5-WvnrU7QJF8F7D0oNI0WzzoEfje58oTozP-j4Ywztl-Ce0Qzj9VNUPV0j8fi6iBH80l2eQgOcs_KTxFi1loYihhaFl__gmV8dd3v2dfsVOzaF5w3epJ06y2ugQMvshb8wFkVgK_UfCPEl203gipTJYP6NllKT0NNub8SASVoKNlZWbe9r8OlHdeNXSkETfdNuLTtdkvwtYoNXlBh7WJWT_CLFhOuVHwhVVVPt8Lr46ZBiafoK7xjnMndYACVqgpJ2ivXTI_DJqzU_f4bJU1HX2mWDqc5I3bq3f5Q4a4Tll0z6JYTjaa_U1WXfZQzuDJmcWpUO_i-8bzLvcEgpkmJe5q4hM9skPdf5c0dWaRt57-JBj-FaTMEyd-OgzIPImW842k1kE32vvEltE1VU9ty12B4lLsLP0Ef-V4QMwRoKjv5SYae3JBV3ZX9XMm2vTR-G3R8hkkRJgvf_lKy_MFkfzNat6Ov9e6SVfZOFCEIooTzGlUK-z4z3YqfMjMXg"
+          alt="Звездопад"
+          class="btn-preview-img"
+        >
+      </div>
+    </div>
+
+    <!-- Мозаичная фотогалерея -->
+    <div class="photo-grid">
+      <!-- туманности -->
+      <figure class="photo-item">
+        <img
+          src="https://i.pinimg.com/originals/73/16/86/731686a88a161e2caec14b0cf10104f6.jpg"
+          alt="Туманность Ориона"
+        >
+        <figcaption>Туманность Ориона</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://starwalk.space/gallery/images/andromeda-galaxy-2022/1920x1080.jpg"
+          alt="Туманность Андромеды"
+        >
+        <figcaption>Туманность Андромеды</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://media.sketchfab.com/models/2a750aef938642a7b1135e9b4613da37/thumbnails/6a2b0c88c2ad4720b372e91c5c665fbf/295b4d5bbba64a1385c6d9fa2eab50da.jpeg"
+          alt="Туманность Кошачий глаз"
+        >
+        <figcaption>Туманность «Кошачий глаз»</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://media-manager.noticiasaominuto.com.br/1920/naom_667d2a9ec24ff.jpg"
+          alt="Туманность Столпы Творения"
+        >
+        <figcaption>Туманность «Столпы Творения»</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://avatars.mds.yandex.net/i?id=be45ebf63900f658d234fd91afa22a1d_l-12474906-images-thumbs&n=13"
+          alt="Туманность Сердце"
+        >
+        <figcaption>Туманность Сердце</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://static.spektrum.de/fm/912/f1920x1080/noirlab2412a.jpg"
+          alt="Туманность Рука Бога"
+        >
+        <figcaption>Туманность «Рука Бога»</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://ww4rf.net/images/nebulae/m27-1920x1080.jpg"
+          alt="Туманность Гантель"
+        >
+        <figcaption>Туманность Гантель</figcaption>
+      </figure>
+
+      <!-- кометы -->
+      <figure class="photo-item">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/a/af/Comet_NEOWISE_and_the_Aurora_Borealis_over_Dry_Falls_-_Single_Exposure_%2850118180827%29.jpg"
+          alt="Комета в небе"
+        >
+        <figcaption>Комета над горизонтом</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://radiokp.ru/sites/default/files/styles/kp_670_446/public/2020-05/20190330_gaf_ic07_110.jpg?itok=Xi9KaaYL"
+          alt="Комета в космосе"
+        >
+        <figcaption>Комета в глубоком космосе</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://ak.picdn.net/shutterstock/videos/1052203951/thumb/6.jpg"
+          alt="Яркий хвост кометы"
+        >
+        <figcaption>Яркий хвост кометы</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://avatars.mds.yandex.net/i?id=4bc0ecfed62e0b278d4078ba58768700_l-4495446-images-thumbs&n=13"
+          alt="Комета Чурюмова — Герасименко"
+        >
+        <figcaption>Комета Чурюмова — Герасименко</figcaption>
+      </figure>
+
+      <!-- астероиды и метеорные потоки -->
+      <figure class="photo-item">
+        <img
+          src="https://avatars.mds.yandex.net/i?id=aeb83171ab9e90dc01b90376fadcc93f_l-4218911-images-thumbs&n=13"
+          alt="Схема орбиты астероидов"
+        >
+        <figcaption>Схема орбиты астероидов</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://img.freepik.com/premium-photo/comet-nucleus-tail-black-background-shooting-star-space-stardust-with-nebula_533381-374.jpg?semt=ais_hybrid&w=740"
+          alt="Комета с ярким хвостом"
+        >
+        <figcaption>Комета с ярким хвостом</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://s.yimg.com/uu/api/res/1.2/z.gGw5W4NPKX17_ltfCVFg--~B/Zmk9c3RyaW07aD0zNjA7dz02NDA7c209MTthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/martha_stewart_living_videos_890/582ed410594d066dbb93132db6a006a9"
+          alt="Мощный метеорный поток"
+        >
+        <figcaption>Мощный метеорный поток</figcaption>
+      </figure>
+
+      <figure class="photo-item">
+        <img
+          src="https://avatars.mds.yandex.net/i?id=72f07d4b829aaa4a9dfae9c51c975bcbdad6b45f-8497071-images-thumbs&n=13"
+          alt="Звёздный дождь"
+        >
+        <figcaption>Звёздный дождь</figcaption>
+      </figure>
+
+      
+    </div>
+
+  </section>
+</main>
+
+
+<footer>
+  <div class="cont">
+    <div class="footer-content">
+      <div class="phone">
+        <a href="tel:+79991234567" class="social-btn" aria-label="Позвонить">
+          <img src="https://img.icons8.com/?size=100&id=ufkkYBXJSuPy&format=png&color=000000"
+               alt="Телефон" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="teleg">
+        <a href="https://web.telegram.org/a/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram">
+          <img src="https://img.icons8.com/?size=100&id=63306&format=png&color=000000"
+               alt="Telegram" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="mail">
+        <a href="mailto:fedorecpiskunovec@gmail.com" class="social-btn" aria-label="Написать на email">
+          <img src="https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000"
+               alt="Почта" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+      <div class="vk">
+        <a href="https://vk.com/mustangfp" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Открыть VK">
+          <img src="https://img.icons8.com/?size=100&id=13977&format=png&color=000000"
+               alt="VK" width="40" height="40" loading="lazy" decoding="async">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Астероиды и кометы. Все права защищены.</p>
+    </div>
+  </div>
+
+  <!-- Виджет уведомлений -->
+  <div class="notify-demo">
+    <div class="notify-bell" aria-label="Уведомления" tabindex="0">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="notify-panel" aria-hidden="true">
+      <ul>
+        <li>Наблюдается комета Галлея</li>
+        <li>Опасный астероид пролетит мимо Земли</li>
+        <li>Новый метеорный поток в эту ночь</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
